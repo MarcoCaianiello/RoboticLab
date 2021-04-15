@@ -1,0 +1,48 @@
+world_length: 20
+world_width: 10.3
+out_dist_x: 0.5
+out_dist_y: 0.5
+in_dist_x: 0.5
+side_points: 5  #must be odd
+in_points_x: 7
+in_points_y: 3
+
+topic_vel: '/cmd_vel'
+topic_scan: '/scan'
+topic_path: '/path'
+topic_odom: '/odom'
+topic_detection_end: '/detection_end'
+
+
+#Detection
+MS_offset_x: 0.0
+MS_offset_y: 0.0
+MS_offset_z: 0.5
+
+RC_offset_x1: 0.03
+RC_offset_y1: 0.0
+RC_offset_z1: 0.165
+RC_offset_yaw1: 0.0
+
+RC_offset_x2: -0.0318
+RC_offset_y2: 0.062
+RC_offset_z2: 0.165
+RC_offset_yaw2: 1.5707
+
+RC_offset_x3: -0.095
+RC_offset_y3: 0.0
+RC_offset_z3: 0.165
+RC_offset_yaw3: 3.1415
+
+RC_offset_x4: -0.0318
+RC_offset_y4: 0.062
+RC_offset_z4: 0.165
+RC_offset_yaw4: -1.5707
+
+detection_rate: 100 #(Hz) (Keep proportional to "samples")
+samples: 40 #the higher the better, the lower the faster (Keep proportional to "detection_rate")
+
+#Map
+map_abs_path: '/home/marco/Scrivania/ros_ws/src/exam/map/world_map'
+#'/home/marco/Scrivania/ros_ws/src/exam/map/world_map'
+

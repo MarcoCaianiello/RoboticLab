@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <!-- Launch the tracking node -->
+  <node pkg="visp_auto_tracker" type="visp_auto_tracker" name="visp_auto_tracker1">
+    <param name="model_path" value="$(find visp_auto_tracker)/models" />
+    <param name="model_name" value="pattern" />
+    <param name="debug_display" value="False" />
+    <remap from="/visp_auto_tracker1/camera_info" to="tb3_0/camera1/camera_info"/>
+    <remap from="/visp_auto_tracker1/image_raw" to="tb3_0/camera1/image_raw"/>
+  </node>
+
+  <node pkg="visp_auto_tracker" type="visp_auto_tracker" name="visp_auto_tracker2">
+    <param name="model_path" value="$(find visp_auto_tracker)/models" />
+    <param name="model_name" value="pattern" />
+    <param name="debug_display" value="False" />
+    <remap from="/visp_auto_tracker2/camera_info" to="tb3_0/camera2/camera_info"/>
+    <remap from="/visp_auto_tracker2/image_raw" to="tb3_0/camera2/image_raw"/>
+  </node>
+
+  <node pkg="visp_auto_tracker" type="visp_auto_tracker" name="visp_auto_tracker3">
+    <param name="model_path" value="$(find visp_auto_tracker)/models" />
+    <param name="model_name" value="pattern" />
+    <param name="debug_display" value="False" />
+    <remap from="/visp_auto_tracker3/camera_info" to="tb3_0/camera3/camera_info"/>
+    <remap from="/visp_auto_tracker3/image_raw" to="tb3_0/camera3/image_raw"/>
+  </node>
+
+  <node pkg="visp_auto_tracker" type="visp_auto_tracker" name="visp_auto_tracker4">
+    <param name="model_path" value="$(find visp_auto_tracker)/models" />
+    <param name="model_name" value="pattern" />
+    <param name="debug_display" value="False" />
+    <remap from="/visp_auto_tracker4/camera_info" to="tb3_0/camera4/camera_info"/>
+    <remap from="/visp_auto_tracker4/image_raw" to="tb3_0/camera4/image_raw"/>
+  </node>
+
+
+  <!-- Launch the detection node -->
+  <node pkg="exam" type="cammaster" name="cammaster" output="screen"/>
+  <node pkg="exam" type="camnode" name="camnode1" args="1"/>
+  <node pkg="exam" type="camnode" name="camnode2" args="2"/>
+  <node pkg="exam" type="camnode" name="camnode3" args="3"/>
+  <node pkg="exam" type="camnode" name="camnode4" args="4"/>
+
+</launch>

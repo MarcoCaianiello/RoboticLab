@@ -1,0 +1,84 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+<world name="default">
+
+	<scene>
+		<ambient>0.0 0.0 0.0 1.0</ambient>
+		<shadows>0</shadows>
+	</scene>
+
+	<include>
+		<uri>model://ground_plane</uri>
+	</include>
+
+	<include>
+		<uri>model://ch1</uri>
+	</include>
+
+	<include>
+		<pose> 0.5 1.5 -0.012 0 0 1.57</pose>
+		<uri>model://h</uri>
+	</include>
+
+	<include>
+		<pose>3.07889 3.98155 0.802553 -5e-06 -1.56807 1.57001</pose>
+		<uri>model://id1</uri>
+	</include>
+
+	<include>
+		<pose>9.22988 5.43636 0.463802 -1.59156 0 1.57</pose>
+		<uri>model://id2</uri>
+	</include>
+
+	<include>
+		<pose>12.7536 2.01063 0.54822 -3.14159 1.56486 -1.57159</pose>
+		<uri>model://id3</uri>
+	</include>
+
+	<include>
+		<pose>7.2 2.9 0.5 -1.56 0 1.57</pose>
+		<uri>model://id4</uri>
+	</include>
+
+	<include>
+		<pose>17.7444 2.00896 0.480467 -1e-06 1.56333 1.57</pose>
+		<uri>model://id5</uri>
+	</include>
+
+	<include>
+		<pose>4.2801 5.76334 0.487055 1.58034 0 1.57</pose>
+		<uri>model://id6</uri>
+	</include>
+
+	<include>
+		<pose>3.66 8.0 0.5 3.12 1.56 1.56</pose>
+		<uri>model://id7</uri>
+	</include>
+
+
+      <light type="point" name='user_point_light_0'>
+        <pose>2.32214 2.23078 1 0 -0 0</pose>
+      </light>
+      <light type="point" name='user_point_light_1'>
+        <pose frame=''>2.50389 8.69331 1 0 -0 0</pose>
+      </light>
+      <light type="point"  name='user_point_light_2'>
+        <pose frame=''>6.5909 3.14179 1 0 -0 0</pose>
+      </light>
+      <light type="point"  name='user_point_light_3'>
+        <pose frame=''>7.38293 5.91245 1 0 -0 0</pose>
+      </light>
+      <light type="point"  name='user_point_light_4'>
+        <pose frame=''>12.5807 2.70203 1 0 -0 0</pose>
+      </light>
+      <light type="point"  name='user_point_light_5'>
+        <pose frame=''>17.4754 2.62674 1 0 -0 0</pose>
+      </light>
+      <light type="point"  name='user_point_light_6'>
+        <pose frame=''>2.772388 8.802304 1 0 -0 0</pose>
+      </light>
+
+
+</world>
+</sdf>
+

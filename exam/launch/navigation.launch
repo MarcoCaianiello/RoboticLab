@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+
+<launch>
+  <arg name="model"             default="waffle"/>
+  <arg name="second_tb3"        default="tb3_1"/>
+  <arg name="second_tb3_x_pos"  default=" 0.5"/>
+  <arg name="second_tb3_y_pos"  default=" 1.3"/>
+  <arg name="second_tb3_yaw"    default=" 0.0"/>
+  <arg name="map_file"          default="$(find exam)/map/world_map.yaml"/> 
+  <!-- <arg name="map_file"          default="$(find exam)/map/my_map.yaml"/> -->
+
+  <!-- Map server -->
+  <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)">
+    <param name="frame_id" value="map" />
+  </node>
+
+  
+  <group ns = "$(arg second_tb3)">
+    <param name="tf_prefix" value="$(arg second_tb3)_tf"/>
+    
+    <!-- AMCL -->
+    <include file="$(find turtlebot3_navigation)/launch/amcl.launch">
+      <arg name="topic_robot"     value="$(arg second_tb3)"/>
+      <arg name="initial_pose_x"  value="$(arg second_tb3_x_pos)"/>
+      <arg name="initial_pose_y"  value="$(arg second_tb3_y_pos)"/>
+      <arg name="initial_pose_a"  value="$(arg second_tb3_yaw)"/>
+    </include> 
+    
+    <!-- MOVE BASE SERVER -->
+      <include file="$(find turtlebot3_navigation)/launch/move_base.launch">
+        <arg name="topic_robot"     value="$(arg second_tb3)"/>
+        <arg name="model"           value="$(arg model)" />
+      </include>
+  </group>
+  
+</launch>
